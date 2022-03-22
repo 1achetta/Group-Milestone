@@ -10,15 +10,20 @@ Group Project App: Design Part 1 - Group Milestone
 2. [Schema](#Schema)
 
 ## Overview
+
 ### Description
 Memebers: Qiaowen Fang, Roberto Hernandez, Steven Lerner.
 An application for users to search places to eat, and it will provide a list of restaurants with ratings and menus based on the search.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Restaurant Name:**
-- **Rating:**
-- **Overview:**
+- **Catagory: Food and Service**
+- **Mobile: Used on all android devices**
+- **Story: Takes in a zip code and shows local restraunts and allows users to see ratings**
+- **Market: The expected user is anyone above 16**
+- **Habit: This app can be used everyday multible times a day to see where to eat**
+- **Scope: Anyone, anywhere, because we search by zip code**
+
 
 
 ## Product Spec
