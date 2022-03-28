@@ -1,4 +1,4 @@
-Group Project App: Design Part 1 - Group Milestone
+Group Project App: Unit 9 - Group Project App: Design Part 2
 ===
 
 # Munchies
@@ -82,10 +82,81 @@ An application for users to search places to eat, and it will provide a list of 
 N/A
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
-[Add table of models]
+
+Search and results
+
+| Property | Type | Description |
+| -------- | -------- | -------- |
+| searchVal     | string    | The value used by the user to search for restaurants can be zip code, city name, restaurant name, or cuisine   |
+|objectdID|string|Id of the return restaurant (provided by the Yelp API)|
+|imageR|file|Image of the Restaurant|
+|titleR|string|Restaurant Name|
+|addressR|string|Restaurant address|
+|cuisineR|string|Restaurant cuisine|
+|descriptionR|string|Restaurant description|
+|ratingR|integer|Restaurant actual rating|
+
+
+
 ### Networking
-- [Add list of network requests by screen ]
+List of network requests by screen
+
+Example API call to get Restaurant List:
+
+OkHttpClient client = new OkHttpClient().newBuilder()
+  .build();
+  
+Request request = new Request.Builder()
+
+  .url("https://api.yelp.com/v3/businesses/search?term=restaurants&categories=french&location=miami")
+  
+  .method("GET", null)
+  
+  .addHeader("Authorization", "Bearer API_KEY")
+  
+  .addHeader("API_KEY", "")
+  .build();
+  
+Response response = client.newCall(request).execute();
+
+
+•	Home Search Screen
+
+*    Read/Get Query all restaurants that satisfy user search values. Shows Name, address, and rating.
+
+•	RestaurantInfo Screen
+
+* 	Read/Get Query information for a specific restaurant. Shows Name, address, description, rating.
+
+•	Map Screen
+
+* 	Read/Get Shows the location of the restaurant on a map with the option to get directions on google maps.
+
+•	Reviews Screen
+
+* 	Read/Get Query latest Reviews for a restaurant
+
 - [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- [OPTIONAL: List endpoints if using existing API such as Yelp
+
+* Yelp’s Fusion API
+
+    Base URL - https://www.yelp.com/developers/documentation/v3/get_started
+    
+    
+
+| HTTP Verb | Endpoint | description |
+| -------- | -------- | -------- |
+| GET   | /search?term=restaurants&location=     | Get all restaurant on a specific location     |
+|GET|/search?term=restaurants&location=&categories=|Get all restaurants at a specific location and category|
+|GET|/businesses/restaurant-alias/reviews|Get reviews for a specific restaurant|
+
+
+### MileStones
+1. Login screen - user will be able to login and search local restaurants by zip code. 
+
+2. Have a basic build with the zip code search and return restaurants that can be clicked on for more information.
+
+3. Final build just needing to change layout so it is more user friendly.
